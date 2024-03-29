@@ -127,6 +127,7 @@ config.fzf_lua = function()
                 col = col,
                 border = { " ", " ", " ", " ", " ", " ", " ", " " },
                 preview = {
+                    layout = "horizontal",
                     vertical = "down:45%",
                     horizontal = "right:50%",
                     border = "noborder",
