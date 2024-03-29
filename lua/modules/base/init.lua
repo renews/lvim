@@ -309,18 +309,6 @@ modules["lvim-tech/lvim-shell"] = {
     config = ui_config.lvim_shell,
 }
 
-modules["lvim-tech/lvim-fm"] = {
-    commit = funcs.get_commit("lvim-fm", plugins_snapshot),
-    cmd = "LvimFileManager",
-    keys = {
-        { "<Leader>=", "<Cmd>LvimFileManager<CR>", desc = "Lvim file manager" },
-    },
-    dependencies = {
-        "lvim-tech/lvim-shell",
-    },
-    config = ui_config.lvim_fm,
-}
-
 modules["akinsho/toggleterm.nvim"] = {
     commit = funcs.get_commit("toggleterm.nvim", plugins_snapshot),
     config = ui_config.toggleterm_nvim,
@@ -518,6 +506,21 @@ modules["ibhagwan/fzf-lua"] = {
         },
     },
     config = editor_config.fzf_lua,
+}
+
+modules["lvim-tech/lvim-file-browser"] = {
+    commit = funcs.get_commit("lvim-file-browser", plugins_snapshot),
+    keys = {
+        {
+            "<Leader>=",
+            function()
+                require("lvim-file-browser").browse()
+            end,
+            desc = "LvimFileBrowser",
+        },
+    },
+    cmd = "LvimFileBrowser",
+    config = editor_config.lvim_file_browser,
 }
 
 modules["lvim-tech/lvim-linguistics"] = {

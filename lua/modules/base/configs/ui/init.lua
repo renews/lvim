@@ -502,7 +502,7 @@ config.alpha_nvim = function()
     alpha_themes_dashboard.section.header.opts.hl = "AlphaHeader"
     alpha_themes_dashboard.section.buttons.val = {
         button("SPC SPC b", icons.common.project .. " Projects", ":CtrlSpace b<CR>"),
-        button("<Leader>i", icons.common.explorer .. " File explorer", ":MiniFiles<CR>"),
+        button("<Leader>=", icons.common.explorer .. " File explorer", ":LvimFileBrowser<CR>"),
         button("<Leader>f", icons.common.file .. " Search file", ":FzfLua files<CR>"),
         button("<Leader>s", icons.common.search_in_files .. " Search in files", ":FzfLua live_grep<CR>"),
         button("F11", icons.common.help .. "Help", ":LvimHelper<CR>"),
@@ -974,51 +974,6 @@ config.lvim_shell = function()
     vim.keymap.set("n", "<A-f>", function()
         shells.Vifm()
     end, { noremap = true, silent = true, desc = "Ranger" })
-end
-
-config.lvim_fm = function()
-    local lvim_fm_status_ok, lvim_fm = pcall(require, "lvim-fm")
-    if not lvim_fm_status_ok then
-        return
-    end
-    local colors = _G.LVIM_COLORS["colors"][_G.LVIM_SETTINGS.theme]
-    local bg = funcs.darken(colors.bg_01, 0.7, colors.corection)
-    lvim_fm.setup({
-        ui = {
-            float = {
-                float_hl = "NormalFloat",
-                height = _G.LVIM_SETTINGS.floatheight,
-                border_hl = "FloatBorder",
-            },
-            split = "belowright " .. _G.LVIM_SETTINGS.floatheight .. " new",
-        },
-        env = {
-            COLORS = "fg:"
-                .. colors.fg_07
-                .. ",bg:"
-                .. bg
-                .. ",hl:"
-                .. colors.red_03
-                .. ",fg+:"
-                .. colors.fg_07
-                .. ",bg+:"
-                .. bg
-                .. ",hl+:"
-                .. colors.red_03
-                .. ",pointer:"
-                .. colors.red_03
-                .. ",info:"
-                .. colors.orange_03
-                .. ",spinner:"
-                .. colors.orange_03
-                .. ",header:"
-                .. colors.red_03
-                .. ",prompt:"
-                .. colors.green_03
-                .. ",marker:"
-                .. colors.red_03,
-        },
-    })
 end
 
 config.toggleterm_nvim = function()
