@@ -1148,8 +1148,9 @@ modules["iamcco/markdown-preview.nvim"] = {
 }
 
 modules["lvim-tech/lvim-md-utils"] = {
+    commit = funcs.get_commit("lvim-md-utils", plugins_snapshot),
     ft = { "md", "markdown" },
-    config = true,
+    config = languages_config.lvim_md_utils,
 }
 
 modules["lervag/vimtex"] = {
