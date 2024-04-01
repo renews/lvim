@@ -98,6 +98,11 @@ config.nvim_cmp = function()
                 name = "orgmode",
             },
         },
+        view = {
+            entries = {
+                follow_cursor = true,
+            },
+        },
     })
     cmp.setup.cmdline({ ":", "/", "?" }, {
         mapping = cmp.mapping.preset.cmdline(),
