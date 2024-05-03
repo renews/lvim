@@ -1095,20 +1095,25 @@ modules["rcarriga/nvim-dap-ui"] = {
     config = languages_config.nvim_dap_ui,
 }
 
-modules["kristijanhusak/vim-dadbod-ui"] = {
-    commit = funcs.get_commit("vim-dadbod-ui", plugins_snapshot),
-    dependencies = {
-        "tpope/vim-dadbod",
-        "kristijanhusak/vim-dadbod-completion",
+modules["kndndrj/nvim-dbee"] = {
+    dependencies = { "MunifTanjim/nui.nvim" },
+    cmd = "Dbee",
+    keys = {
+        {
+            "<Leader>do",
+            "<cmd>Dbee open<cr>",
+            desc = "Dbee open",
+        },
+        {
+            "<Leader>dc",
+            "<cmd>Dbee close<cr>",
+            desc = "Dbee close",
+        },
     },
-    cmd = {
-        "DBUIToggle",
-        "DBUIAddConnection",
-        "DBUI",
-        "DBUIFindBuffer",
-        "DBUIRenameBuffer",
-    },
-    config = languages_config.vim_dadbod_ui,
+    build = function()
+        require("dbee").install()
+    end,
+    config = languages_config.nvim_dbee,
 }
 
 modules["vuki656/package-info.nvim"] = {
