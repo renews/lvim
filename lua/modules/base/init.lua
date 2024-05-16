@@ -151,16 +151,6 @@ modules["jbyuki/one-small-step-for-vimkind"] = {
     lazy = true,
 }
 
-modules["tpope/vim-dadbod"] = {
-    commit = funcs.get_commit("vim-dadbod", plugins_snapshot),
-    lazy = true,
-}
-
-modules["kristijanhusak/vim-dadbod-completion"] = {
-    commit = funcs.get_commit("vim-dadbod-completion", plugins_snapshot),
-    lazy = true,
-}
-
 modules["hrsh7th/cmp-nvim-lsp"] = {
     commit = funcs.get_commit("cmp-nvim-lsp", plugins_snapshot),
     lazy = true,
