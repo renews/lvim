@@ -73,7 +73,7 @@ M.init_diagnostics = function()
             if choice == "Enable" then
                 local buffers = vim.api.nvim_list_bufs()
                 for _, bufnr in ipairs(buffers) do
-                    local clients = vim.lsp.buf_get_clients(bufnr)
+                    local clients = vim.lsp.get_clients(bufnr)
                     if #clients > 0 then
                         for _, client in ipairs(clients) do
                             if vim.lsp.inlay_hint ~= nil and client.server_capabilities.inlayHintProvider then
@@ -89,7 +89,7 @@ M.init_diagnostics = function()
             elseif choice == "Disable" then
                 local buffers = vim.api.nvim_list_bufs()
                 for _, bufnr in ipairs(buffers) do
-                    local clients = vim.lsp.buf_get_clients(bufnr)
+                    local clients = vim.lsp.get_clients(bufnr)
                     if #clients > 0 then
                         for _, client in ipairs(clients) do
                             if vim.lsp.inlay_hint ~= nil and client.server_capabilities.inlayHintProvider then

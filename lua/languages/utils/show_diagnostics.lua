@@ -17,7 +17,8 @@ local function trim_and_pad(contents, opts)
     opts = opts or {}
     local left_padding = (" "):rep(opts.pad_left or 1)
     local right_padding = (" "):rep(opts.pad_right or 1)
-    contents = util.trim_empty_lines(contents)
+    -- contents = util.trim_empty_lines(contents)
+    -- contents = vim.split(contents, { trimempty = true })
     for i, line in ipairs(contents) do
         contents[i] = string.format("%s%s%s", left_padding, line:gsub("\r", ""), right_padding)
     end

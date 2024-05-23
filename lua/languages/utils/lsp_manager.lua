@@ -21,7 +21,7 @@ M.lsp_to_start = {}
 M.ordered_keys = {}
 
 M.efm_update = function()
-    local clients = vim.lsp.get_active_clients()
+    local clients = vim.lsp.get_clients()
     local efmClient = nil
     for _, client in ipairs(clients) do
         if client.name == "efm" then
