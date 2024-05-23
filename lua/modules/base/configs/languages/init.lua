@@ -457,9 +457,6 @@ config.nvim_treesitter = function()
         autopairs = {
             enable = true,
         },
-        autotag = {
-            enable = true,
-        },
         rainbow = {
             enable = true,
         },
@@ -535,23 +532,30 @@ config.nvim_navbuddy = function()
         lsp = { auto_attach = true },
     })
     vim.keymap.set("n", "<C-c>v", function()
-        vim.cmd("Navbuddy")
+        nvim_navbuddy.open()
     end, { noremap = true, silent = true, desc = "Navbuddy" })
 end
 
-config.symbols_outline_nvim = function()
-    local symbols_outline_status_ok, symbols_outline = pcall(require, "symbols-outline")
-    if not symbols_outline_status_ok then
+config.outline_nvim = function()
+    local outline_status_ok, outline = pcall(require, "outline")
+    if not outline_status_ok then
         return
     end
-    symbols_outline.setup({
-        symbols = icons.outline,
-        highlight_hovered_item = true,
-        show_guides = true,
+    outline.setup({
+        outline_window = {
+            winhl = "Normal:SideBar,NormalNC:SideBarNC",
+        },
+        preview_window = {
+            border = { " ", " ", " ", " ", " ", " ", " ", " " },
+            winhl = "Normal:SideBar,NormalNC:SideBarNC",
+        },
+        symbols = {
+            icons = icons.outline,
+        },
     })
     vim.keymap.set("n", "<A-v>", function()
-        vim.cmd("SymbolsOutline")
-    end, { noremap = true, silent = true, desc = "SymbolsOutline" })
+        vim.cmd("Outline")
+    end, { noremap = true, silent = true, desc = "Outline" })
 end
 
 config.nvim_dap_ui = function()

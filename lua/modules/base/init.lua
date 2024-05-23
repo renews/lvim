@@ -78,11 +78,6 @@ modules["nvim-telescope/telescope-file-browser.nvim"] = {
     lazy = true,
 }
 
-modules["camgraff/telescope-tmux.nvim"] = {
-    commit = funcs.get_commit("telescope-tmux.nvim", plugins_snapshot),
-    lazy = true,
-}
-
 modules["junegunn/fzf"] = {
     commit = funcs.get_commit("fzf", plugins_snapshot),
     build = function()
@@ -846,6 +841,8 @@ modules["NeogitOrg/neogit"] = {
     commit = funcs.get_commit("neogit", plugins_snapshot),
     dependencies = {
         "nvim-lua/plenary.nvim",
+        "sindrets/diffview.nvim",
+        "ibhagwan/fzf-lua",
     },
     cmd = "Neogit",
     keys = {
@@ -1029,7 +1026,8 @@ modules["akinsho/flutter-tools.nvim"] = {
     config = languages_config.flutter_tools_nvim,
 }
 
-modules["kosayoda/nvim-lightbulb"] = {
+-- modules["kosayoda/nvim-lightbulb"] = {
+modules["lvim-tech/nvim-lightbulb"] = {
     commit = funcs.get_commit("nvim-lightbulb", plugins_snapshot),
     event = {
         "BufRead",
@@ -1063,12 +1061,13 @@ modules["SmiteshP/nvim-navbuddy"] = {
     config = languages_config.nvim_navbuddy,
 }
 
-modules["simrat39/symbols-outline.nvim"] = {
-    commit = funcs.get_commit("symbols-outline.nvim", plugins_snapshot),
+-- modules["hedyhli/outline.nvim"] = {
+modules["lvim-tech/outline.nvim"] = {
+    commit = funcs.get_commit("outline.nvim", plugins_snapshot),
     event = {
         "BufRead",
     },
-    config = languages_config.symbols_outline_nvim,
+    config = languages_config.outline_nvim,
 }
 
 modules["rcarriga/nvim-dap-ui"] = {
@@ -1208,10 +1207,6 @@ modules["windwp/nvim-autopairs"] = {
 
 modules["windwp/nvim-ts-autotag"] = {
     commit = funcs.get_commit("nvim-ts-autotag", plugins_snapshot),
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "hrsh7th/nvim-cmp",
-    },
     config = completion_config.nvim_ts_autotag,
 }
 
