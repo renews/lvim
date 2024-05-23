@@ -14,9 +14,9 @@
 
   * Automatically install dependencies (lsp servers, linters, formatters, debbugers) by filetype
 
-  Current version - 4.1.00 (2023-09-24)
+  Current version - 5.0.00 (2024-05-23)
 
-  128 plugins
+  123 plugins
 
 **  SCREENSHOTS
 
@@ -28,7 +28,7 @@
 
 **  INTRODUCTION
 
-    * Neovim 0.9.0+ (for NEOVIM < 0.9 use branch NEOVIM-0.8)
+    * Neovim 0.11.0+ (for NEOVIM < 0.11 use branch NEOVIM-0.10)
     * Add or remove settings, rewrite all settings
     * Add or remove plugins, rewrite all plugins
     * Dynamic LSP activation
@@ -74,7 +74,7 @@
 
 **  REQUIREMENTS
 
-    * [[https://github.com/neovim/neovim/wiki/Installing-Neovim][neovim >= 0.9.0]]
+    * [[https://github.com/neovim/neovim/wiki/Installing-Neovim][neovim >= 0.11.0]]
     * [[https://github.com/neovim/pynvim][pynvim]]
     * [[https://github.com/mhinz/neovim-remote][neovim-remote]]
     * [[https://nodejs.org/en/][nodejs]]
