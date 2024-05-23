@@ -9,15 +9,12 @@ config.lvim_colorscheme = function()
     end
     lvim_colorscheme.setup({
         sidebars = {
-            "dbui",
+            "dbee",
             "qf",
             "pqf",
-            "Outline",
-            "terminal",
-            "packer",
+            "alpha",
             "calendar",
             "spectre_panel",
-            "ctrlspace",
             "neo-tree",
         },
     })
