@@ -10,7 +10,8 @@
         "assign-type-mismatch",
         "missing-return",
         "different-requires",
-        "lowercase-global"
+        "lowercase-global",
+        "undefined-field"
     ],
     "Lua.diagnostics.globals": [
         "vim",

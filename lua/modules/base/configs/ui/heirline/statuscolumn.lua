@@ -77,7 +77,6 @@ M.get_statuscolumn = function()
             end
             return gits
         end,
-        -- ns_git = vim.api.nvim_create_namespace("gitsigns_extmark_signs_"),
         click_args = function(self, minwid, clicks, button, mods)
             local args = {
                 minwid = minwid,

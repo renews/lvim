@@ -70,7 +70,6 @@ config.gitsigns_nvim = function()
             },
         },
         linehl = false,
-        _extmark_signs = true,
     })
     vim.api.nvim_create_user_command("GitSignsPreviewHunk", "lua require('gitsigns').preview_hunk()", {})
     vim.api.nvim_create_user_command("GitSignsNextHunk", "lua require('gitsigns').next_hunk()", {})
